@@ -7,9 +7,8 @@ Link to the Power Point Presentation:
 
 https://unigraz-my.sharepoint.com/:p:/g/personal/niklas_schramm_edu_uni-graz_at/EaNu7IcmR41OoMHv9IJxpj4BrR4LGyHZIMFZjfl4RZsN6g?e=SfldAz
 
-
-
-The 10-minute time limit for presentations is strict, points will be deducted if you take longer.
+Further Presentation information:
+  - The 10-minute time limit for presentations is strict, points will be deducted if you take longer.
 
 Discussants have to pay attention to their corresponding presentation, as the student projects will not be available before the presentations.
 
