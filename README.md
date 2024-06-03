@@ -28,3 +28,18 @@ Further Presentation information:
   - A good practice is to structure your presentation with at least one slide for each part of the report, so it is easier to follow.
 
   - You will learn the date when your project presents and when it iss discussant on the week after groups are registered. Prepare as if you would present on the first session.
+
+
+Important dates:
+
+
+Dates wrap-up:
+
+    22.05: First project feedback exercise session
+    12.06: Second project feedback exercise session and general Q&A session
+    12.06: Deadline to register your group in Teach Center. Registration was opened earlier today.
+    19.06: First presentations session
+    26.06: Second presentations session
+    10.07: Project report deadline
+
+
