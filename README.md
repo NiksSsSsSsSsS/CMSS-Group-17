@@ -1,7 +1,18 @@
 # CMSS-Group-17
 
 Link to the Text files with ideas:
+
 https://unigraz-my.sharepoint.com/:w:/g/personal/niklas_schramm_edu_uni-graz_at/EeBLnCoUompDg08Mth5LWpEBGOLcMMrNEzTTY4S28GEdJg?e=p9YLEc
+
+Further report information:
+
+    Motivation: research question including some references to argue about previous work 
+
+    Model description: precise explanation of all dynamics and assumptions and what other models it is based on. If any data is involved, please explain it here. 
+
+    Model analysis: Visualization of the model dynamics to provide insights and results of simulations 
+
+    Conclusions: reflect on your results and how they inform the question that motivated the project 
 
 Link to the Power Point Presentation:
 
