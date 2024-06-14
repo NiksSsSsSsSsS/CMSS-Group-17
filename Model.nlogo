@@ -345,6 +345,8 @@ to murder
           set numberMurders numberMurders + 1
           ; Update the total number of deaths
           set numberDeaths numberDeaths + 2
+          ; comment murder has negative impact on morality
+          set Parameter_Morality Parameter_Morality - 0.1
           ; Ensure both agents are accounted for before they die
           ask partner [ die ]
           die
@@ -444,7 +446,8 @@ to actFemals
 
           ; Comment: initialize individual morality
           set individual_morality random-normal Parameter_Morality SD_Morality
-
+          ; comment birth has positive impact on morality
+          set Parameter_Morality Parameter_Morality + 0.05
         ]
 
         ; Statistics:
@@ -473,6 +476,9 @@ to actFemals
 
           ; Comment: initialize individual morality
           set individual_morality random-normal Parameter_Morality SD_Morality
+
+          ; comment birth has positive impact on morality
+          set Parameter_Morality Parameter_Morality + 0.05
         ]
 
         ; Statistics:
@@ -515,6 +521,8 @@ to checkAccident
     ; The black area:
     if affectedArea >= 0 and affectedArea <= 70
     [
+      ; comment death has negative impact on morality
+      set Parameter_Morality Parameter_Morality - 0.01
       ; Approx. 30% of these accidents are mortal:
       let mortal random 100 >= 70
       if mortal
@@ -523,6 +531,8 @@ to checkAccident
         let kills floor random-normal 1 1.1
         if kills > 0
         [
+          ; comment accident has negative impact on morality
+          set Parameter_Morality Parameter_Morality - 0.03
           ; Kill the affected members:
           ask up-to-n-of kills turtles with [pcolor = 0] [ die ]
 
@@ -536,6 +546,8 @@ to checkAccident
     ; The dark area:
     if affectedArea > 70 and affectedArea <= 90
     [
+      ; comment death has negative impact on morality
+      set Parameter_Morality Parameter_Morality - 0.02
       ; Approx. 15% of these accidents are mortal:
       let mortal random 100 >= 85
       if mortal
@@ -544,6 +556,8 @@ to checkAccident
         let kills floor random-normal 0.9 0.8
         if kills > 0
         [
+          ; comment death has negative impact on morality
+          set Parameter_Morality Parameter_Morality - 0.04
           ; Kill the affected members:
           ask up-to-n-of kills turtles with [pcolor = 0] [ die ]
 
@@ -557,6 +571,8 @@ to checkAccident
     ; The gray area:
     if affectedArea > 90 and affectedArea <= 98
     [
+      ; comment death has negative impact on morality
+      set Parameter_Morality Parameter_Morality - 0.03
       ; Approx. 5% of these accidents are mortal:
       let mortal random 100 >= 95
       if mortal
@@ -565,6 +581,8 @@ to checkAccident
         let kills floor random-normal 0.8 0.8
         if kills > 0
         [
+          ; comment death has negative impact on morality
+          set Parameter_Morality Parameter_Morality - 0.05
           ; Kill the affected members:
           ask up-to-n-of kills turtles with [pcolor = 0] [ die ]
 
@@ -578,6 +596,8 @@ to checkAccident
     ; The white, save area:
     if affectedArea > 98
     [
+      ; comment death has negative impact on morality
+      set Parameter_Morality Parameter_Morality - 0.04
       ; Approx. 1% of these accidents are mortal:
       let mortal random 100 > 98
       if mortal
@@ -586,6 +606,8 @@ to checkAccident
         let kills floor random-normal 0.5 0.5
         if kills > 0
         [
+          ; comment death has negative impact on morality
+          set Parameter_Morality Parameter_Morality - 0.06
           ; Kill the affected members:
           ask up-to-n-of kills turtles with [pcolor = 0] [ die ]
 
@@ -604,6 +626,8 @@ to checkLife
     ifelse ageYears > ageOfDeathYears
     [
       set numberDeaths numberDeaths + 1
+      ; comment death has negative impact on morality
+      set Parameter_Morality Parameter_Morality - 0.01
       die
     ]
     [
@@ -624,6 +648,9 @@ to checkLife
     ifelse ageYears > ageOfDeathYears
     [
       set numberDeaths numberDeaths + 1
+      ; comment death has negative impact on morality
+      set Parameter_Morality Parameter_Morality - 0.01
+
       die
     ]
     [
@@ -699,12 +726,14 @@ to mate
   [
     ; Choose a random partner:
     let partner one-of females with [ not isPregnant and ageYears >= startAgePermittedMating and ageYears <= endAgePermittedMating and ageYears < startMenopauseYears]
-
+    ; comment mating has positive impact on morality
+    set Parameter_Morality Parameter_Morality + 0.01
     ; Both are fertile?
     if partner != nobody and isFertile and [isFertile] of partner and [ previousChildren < maxChildren ] of partner
     [
       ; Chances of pregnancy after intercourse: 75%
-      let getsPregnant random 100 > 75
+      ; Comment added Parameter_Morality to euqation
+      let getsPregnant random 100 > 75 * Parameter_Morality
       if getsPregnant
       [
         ask partner
@@ -1410,6 +1439,8 @@ numbermurders
 17
 1
 11
+
+
 
 SLIDER
 231
