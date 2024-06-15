@@ -177,6 +177,27 @@ Determine Acceptance Probability:
 Acceptance Decision: Both agents will generate a random number between 0 and 1.
 - If both random numbers are ≤ 0.8, the agents accept each other and mating occurs.
 - If either agent's random number is > 0.8, the mating attempt fails.
+
+### Attractiveness at birth
+
+We added a new logic for influencing the attractiveness at birth per gender.
+
+2 new sliders:
+
+    male_attractiveness_scale
+    female_attractiveness_scale
+
+The standard is 10. This means that a child can be born as anything between a 1 to 10 (attractiveness-wise). 
+
+If we set it to 3 for males, e.g., male children can only be born as a 1, a 2 or a 3. 
+
+If the difference between the genders is to high, the population goes extinct due to the previously added attractiveness filter.
+
+Example Results for attractiveness: if the scale for attractiveness at birth is set to... 
+- M=2, F=2 --> stable population (because on average, the chances are equal)
+- M=3, F=7 or inverted --> population goes extinct (difference is too big, too many rejections = pickiness too high in the long run)
+- M=10, F=10 (standard values), means that children can be born as 1 or a 10
+  
 ------------------------------------------------------
 
 # References
