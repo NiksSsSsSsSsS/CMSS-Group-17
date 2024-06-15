@@ -104,19 +104,24 @@ It is increased by following actions:
 
 ### Example Scenario:
 The moral of the crew decreases for example, when a murder takes place:
+
     set Parameter_Morality max (list 0 (Parameter_Morality - 0.1))
     set Parameter_Morality min (list 2 (Parameter_Morality))
+    
 It is ensured, that the moral score stays in bounds (0,2)
 
 The moral of the crew increases for example, when a sexual intercourse takes place:
+
     set Parameter_Morality max (list 0 (Parameter_Morality + 0.1))
     set Parameter_Morality min (list 2 (Parameter_Morality))
 
 Let's say we have a morality of .5. 
 Then the intercourse (or getPregnant probability) is halved:
+
     let getsPregnant random 100 > 75 * 0.5
 
 If we have a morality score of 2, the intercourse (or getPregnant probability) is doubled:
+
     let getsPregnant random 100 > 75 * 2
 
 
