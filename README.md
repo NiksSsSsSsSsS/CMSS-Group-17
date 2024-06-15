@@ -83,15 +83,43 @@ Further report information:
 
 # 1. Morality
     last change: 15.06.2024, 00:45 by Tanja
+Incorporation of a global Moral parameter (Parameter_Morality) 
 
 ### TODO 1:
 Reference and explain what we want to do here 
-### TODO 2:
-Implement and mention changes
+### Morality Mechanism:
+Morality = starts by default at 1 and can range between 0 and 2, but this can be specified.
+It is a factor, that influences the mating probability. 
+    let getsPregnant random 100 > 75 * Parameter_Morality
+
+Moraility can be influenced negatively and positively.
+It is decreased by following actions:
+    - Natural Death (-0.01)
+    - Murder (-0.1)
+    - Accidents (-0.1, -.06)(depending on the location and mortality. If the accident occurs in a safe zone, the impact on morality is bigger. If someone dies, the impact is bigger as well)
+It is increased by following actions:
+    - Birth (+0.05)
+    - Sexual Intercourse (+0.01)
 
 ### Example Scenario:
-### TODO 3:
-Mention an example
+The moral of the crew decreases for example, when a murder takes place:
+    set Parameter_Morality max (list 0 (Parameter_Morality - 0.1))
+    set Parameter_Morality min (list 2 (Parameter_Morality))
+It is ensured, that the moral score stays in bounds (0,2)
+
+The moral of the crew increases for example, when a sexual intercourse takes place:
+    set Parameter_Morality max (list 0 (Parameter_Morality + 0.1))
+    set Parameter_Morality min (list 2 (Parameter_Morality))
+
+Let's say we have a morality of .5. 
+Then the intercourse (or getPregnant probability) is halved:
+    let getsPregnant random 100 > 75 * 0.5
+
+If we have a morality score of 2, the intercourse (or getPregnant probability) is doubled:
+    let getsPregnant random 100 > 75 * 2
+
+
+
 
 ------------------------------------------------------
 
