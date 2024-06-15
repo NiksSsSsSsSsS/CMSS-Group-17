@@ -90,6 +90,7 @@ Reference and explain what we want to do here
 ### Morality Mechanism:
 Morality = starts by default at 1 and can range between 0 and 2, but this can be specified.
 It is a factor, that influences the mating probability. 
+
     let getsPregnant random 100 > 75 * Parameter_Morality
 
 Moraility can be influenced negatively and positively.
