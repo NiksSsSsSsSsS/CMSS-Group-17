@@ -57,6 +57,7 @@ globals
   meanAgeFemalesYears
   meanAgeMalesYears
   numberRejections  ; <----------- NEW (3)
+  numberKillsByViewDifference  ; <----------- NEW (*)
  ;male_attractiveness_scale ; <------------ NEW SLIDER (3)
  ;female_attractiveness_scale ; <------------ NEW SLIDER (3)
 
@@ -134,7 +135,7 @@ to setup       ; this function (and the button with the same name) resets all th
     set isPregnant false
     set pregnantSinceDays 0
     set attractiveness random 1 + female_attractiveness_scale  ; <----------- NEW (3)
-
+    set polarizing_view random-float 10  ; <----------- NEW (*)
   ]
 
   ask turtles with [ ageYears < 0 ]
@@ -155,6 +156,7 @@ to setup       ; this function (and the button with the same name) resets all th
   countSex
 
   set numberRejections 0  ; <----------- NEW (3)
+  set numberKillsByViewDifference 0  ; <----------- NEW (*)
 
   reset-ticks
   output-print "Please wait until the mission's\nsimulation ends ..."
@@ -568,6 +570,7 @@ to checkPolarizingView ; this is the killing logic <------ NEW (*)
       [
         let to-die one-of (list self other-turtle) ; self or the other (only 1) randomly dies
         ask to-die [ die ]
+        set numberKillsByViewDifference numberKillsByViewDifference + 1  ; <----------- NEW (*)
       ]
     ]
 
@@ -1185,10 +1188,10 @@ simulateMonthsInsteadOfDays
 -1000
 
 SLIDER
-1428
-186
-1633
-219
+1423
+643
+1628
+676
 male_attractiveness_scale
 male_attractiveness_scale
 1
@@ -1200,10 +1203,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-1429
-231
-1637
-264
+1424
+688
+1632
+721
 female_attractiveness_scale
 female_attractiveness_scale
 1
@@ -1215,11 +1218,11 @@ NIL
 HORIZONTAL
 
 TEXTBOX
-1427
-127
-1671
-168
-Attractiveness-limitation scale (1 to 10) for children at time of birth:
+1422
+584
+1666
+660
+(OPTIONAL) \nSet by default to MAX (10)\nAttractiveness-limitation scale (1 to 10) for children at time of birth:
 15
 0.0
 1
@@ -1231,6 +1234,17 @@ MONITOR
 339
 Number of Rejections
 numberRejections
+17
+1
+11
+
+MONITOR
+1450
+350
+1654
+395
+Number of Kills by View_Difference
+numberKillsByViewDifference
 17
 1
 11

@@ -57,6 +57,7 @@ globals
   meanAgeFemalesYears
   meanAgeMalesYears
   numberRejections  ; <----------- NEW (3)
+  numberKillsByViewDifference  ; <----------- NEW (*)
  ;male_attractiveness_scale ; <------------ NEW SLIDER (3)
  ;female_attractiveness_scale ; <------------ NEW SLIDER (3)
 
@@ -155,6 +156,7 @@ to setup       ; this function (and the button with the same name) resets all th
   countSex
 
   set numberRejections 0  ; <----------- NEW (3)
+  set numberKillsByViewDifference 0  ; <----------- NEW (*)
 
   reset-ticks
   output-print "Please wait until the mission's\nsimulation ends ..."
@@ -568,6 +570,7 @@ to checkPolarizingView ; this is the killing logic <------ NEW (*)
       [
         let to-die one-of (list self other-turtle) ; self or the other (only 1) randomly dies
         ask to-die [ die ]
+        set numberKillsByViewDifference numberKillsByViewDifference + 1  ; <----------- NEW (*)
       ]
     ]
 
@@ -1185,10 +1188,10 @@ simulateMonthsInsteadOfDays
 -1000
 
 SLIDER
-1428
-186
-1633
-219
+1423
+643
+1628
+676
 male_attractiveness_scale
 male_attractiveness_scale
 1
@@ -1200,10 +1203,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-1429
-231
-1637
-264
+1424
+688
+1632
+721
 female_attractiveness_scale
 female_attractiveness_scale
 1
@@ -1215,22 +1218,33 @@ NIL
 HORIZONTAL
 
 TEXTBOX
-1427
-127
-1671
-168
-Attractiveness-limitation scale (1 to 10) for children at time of birth:
+1426
+548
+1670
+624
+(OPTIONAL) \nSet by default to MAX (10)\nAttractiveness-limitation scale (1 to 10) for children at time of birth:
 15
 0.0
 1
 
 MONITOR
-1451
-294
-1583
-339
+1412
+22
+1544
+67
 Number of Rejections
 numberRejections
+17
+1
+11
+
+MONITOR
+1411
+78
+1615
+123
+Number of Kills by View_Difference
+numberKillsByViewDifference
 17
 1
 11

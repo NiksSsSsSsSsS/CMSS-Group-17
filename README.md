@@ -182,12 +182,19 @@ Netlogo: marked LOC with
 
     <----NEW (*) 
 
-### Agent-specific additions:
+### Agent-specific Additions:
 
 - added *polarizing_view* parameter to each object struct (males-own & females-own = m/f agents).
 - set random value between 1-10 at time of birth (in *actFemales* function)
 
       set polarizing_view random-float 10
+
+### Global Additions:
+
+- Added a Monitor (for counting up the number of kills caused by different views)
+  - in the interface, select "Monitor" (Button) 
+  - Reporter = numberKillsByViewDifference
+  - Label (optional) = Number of Kills by View_Difference
 
 ### Check Polarizing View:
 
@@ -210,13 +217,16 @@ When two agents meet outside of the safety-zone:
 - one of the two agents dies (randomly chosen), the other one survives the encounter:
 
       ask to-die [ die ]
+
+- add +1 to polarizing_view kill counter (only for statistical reasons)
+
+      set numberKillsByViewDifference numberKillsByViewDifference + 1
   
 ------------------------------------------------------
 
 # References
 
-- [1] Github: Simulation of a 6,300-year intergalactic journey​
-https://github.com/SommerEngineering/Simulation-of-long-distance-space-flight?tab=readme-ov-file ​
+- [1] Github: Simulation of a 6,300-year intergalactic journey​: https://github.com/SommerEngineering/Simulation-of-long-distance-space-flight?tab=readme-ov-file ​
 
 - [2] Model: Sommer, Thorsten (2019). Simulation of a long-distance space flight. DOI: 10.5281/zenodo.3382912​
 
