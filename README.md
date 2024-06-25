@@ -90,15 +90,15 @@ Netlogo: marked LOC with
     
 ### Changed Values:   
     -                         Old        New
-    - MaxAgeMen:               79         68.4
-    - MaxAgeMen:               85         73.8
+    - MaxAgeMen:               79*(73.4)  68.4
+    - MaxAgeMen:               85*(80.1)  73.8
     - infertilityMen:          15         17.5
     - infertilityWomen:        10         17.5
     - Menopause:               45         50
     - Menopause_SD:            3.9        5
     - Chance of pregnancy:     75         20 -70
     - Twinning Rate:           2          3
-    
+ Note: * in paper, () in code
 
 
 ------------------------------------------------------
