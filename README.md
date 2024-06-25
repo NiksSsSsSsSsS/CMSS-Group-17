@@ -77,6 +77,29 @@ Further report information:
 
     - Conclusions: reflect on your results and how they inform the question that motivated the project 
 
+------------------------------------------------------
+
+# New addition inspired by recent findings
+
+Source for values are in the word documents
+
+Netlogo: marked LOC with 
+
+    <----NEW(new data)  
+    (Or   <----NEW(old data & code))  
+    
+### Changed Values:   
+    -             Old        New
+    - MaxAgeMen:   79         68.4
+    - MaxAgeMen:   85         73.8
+    - infertilityMen:   15         17.5
+    - infertilityWomen:   10         17.5
+    - Menopause:   45         50
+    - Menopause_SD:            5
+    - Chance of pregnancy:    75        20 -70
+    - Twinning Rate:        2        3
+    
+
 
 ------------------------------------------------------
 
