@@ -43,7 +43,6 @@ Important dates:
 ------------------------------------------------------
 
 ## Presentation
-    last change: 15.06.2024, 00:56 by Tanja
 
 Link to the Power Point Presentation:
 
@@ -63,7 +62,6 @@ Further Presentation information:
 ------------------------------------------------------
 
 ## Report
-    last change: ??.06.2024, 00:56 by XY
 
 Link to the Text files with ideas:
 
@@ -79,83 +77,24 @@ Further report information:
 
     - Conclusions: reflect on your results and how they inform the question that motivated the project 
 
-------------------------------------------------------
-
-# 1. Morality
-    last change: 15.06.2024, 00:45 by Tanja
-Incorporation of a global Moral parameter (Parameter_Morality) 
-
-### TODO 1:
-Reference and explain what we want to do here 
-### Morality Mechanism:
-Morality = starts by default at 1 and can range between 0 and 2, but this can be specified.
-It is a factor, that influences the mating probability. 
-
-    let getsPregnant random 100 > 75 * Parameter_Morality
-
-Moraility can be influenced negatively and positively.
-It is decreased by following actions:
-    - Natural Death (-0.01)
-    - Murder (-0.1)
-    - Accidents (-0.1, -.06)(depending on the location and mortality. If the accident occurs in a safe zone, the impact on morality is bigger. If someone dies, the impact is bigger as well)
-It is increased by following actions:
-    - Birth (+0.05)
-    - Sexual Intercourse (+0.01)
-
-### Example Scenario:
-The moral of the crew decreases for example, when a murder takes place:
-
-    set Parameter_Morality max (list 0 (Parameter_Morality - 0.1))
-    set Parameter_Morality min (list 2 (Parameter_Morality))
-    
-It is ensured, that the moral score stays in bounds (0,2)
-
-The moral of the crew increases for example, when a sexual intercourse takes place:
-
-    set Parameter_Morality max (list 0 (Parameter_Morality + 0.1))
-    set Parameter_Morality min (list 2 (Parameter_Morality))
-
-Let's say we have a morality of .5. 
-Then the intercourse (or getPregnant probability) is halved:
-
-    let getsPregnant random 100 > 75 * 0.5
-
-If we have a morality score of 2, the intercourse (or getPregnant probability) is doubled:
-
-    let getsPregnant random 100 > 75 * 2
-
-
-
 
 ------------------------------------------------------
 
-# 2. Homicide Rate
-    last change: 15.06.2024, 00:45 by Tanja
+# New addition inspired by lecture: Attractiveness
 
-Similar to Slides #1, page 6-7?
+(inspired by Slides #1, page 24 etc.)
 
-### TODO 1:
-Reference and explain what we want to do here 
+Netlogo: marked LOC with 
 
-### TODO 2:
-Implement and mention changes
+    <----NEW(3) 
 
-### Example Scenario:
-### TODO 3:
-Mention an example
-
-
-------------------------------------------------------
-
-# 3. Attractiveness 
-    (last change: 15.06.2024, 00:45)
 
 Incorporation of the "attractiveness matching" date choice model (by Kalick and Hamilton, 1986) from the lecture slides #1, pages 24-28. For this, we modified the mate procedure:
 
 ### Acceptance Mechanism: 
 Attractiveness = assigned to each agent at birth. 
 
-It uses a random value between 1 and a specified maximum 
+It uses a random value between 1 and a specified maximum (OPTIONAL - subject to change)
 - male_attractiveness_scale for males 
 - female_attractiveness_scale for females)
 
@@ -231,10 +170,56 @@ Example Results for attractiveness: if the scale for attractiveness at birth is 
 - M=2, F=2 --> stable population (because on average, the chances are equal)
 - M=3, F=7 or inverted --> population goes extinct (difference is too big, too many rejections = pickiness too high in the long run)
 - M=10, F=10 (standard values), means that children can be born as 1 or a 10
+
+
+------------------------------------------------------
+
+#  New addition chosen by us: Polarizing View (for Homicide Rate)
+
+(inspired by Slides #1, page 6-7)
+
+Netlogo: marked LOC with 
+
+    <----NEW (*) 
+
+### Agent-specific additions:
+
+- added *polarizing_view* parameter to each object struct (males-own & females-own = m/f agents).
+- set random value between 1-10 at time of birth (in *actFemales* function)
+
+      set polarizing_view random-float 10
+
+### Check Polarizing View:
+
+- new function *checkPolarizingView* (in *setup*)
+- only asks agents outside of the safety-zone
+  - to avoid checking for pregnancy
+  - to avoid checking age 
+  - won't kill pregnant agents or children by default
+
+When two agents meet outside of the safety-zone:
+
+- check difference:
+    
+      let view-difference abs (polarizing_view - [polarizing_view] of other-turtle)
+
+- if *view_difference* surpasses a certain treshold:
+
+      let to-die one-of (list self other-turtle) ; self or the other (only 1) randomly dies
+
+- one of the two agents dies (randomly chosen), the other one survives the encounter:
+
+      ask to-die [ die ]
   
 ------------------------------------------------------
 
 # References
 
-- The Kalick and Hamilton dating model (1986)
-- (...)
+- [1] Github: Simulation of a 6,300-year intergalactic journey​
+https://github.com/SommerEngineering/Simulation-of-long-distance-space-flight?tab=readme-ov-file ​
+
+- [2] Model: Sommer, Thorsten (2019). Simulation of a long-distance space flight. DOI: 10.5281/zenodo.3382912​
+
+- [3] Procedure of the Simulation:  Sommer, Thorsten (2019). Simulation of a 6,300-year intergalactic journey. DOI: 10.17504/protocols.io.676hhre​
+
+- [4]  Experiment of Frédéric Marin and Camille Beluffi from 2018: https://arxiv.org/abs/1806.03856 
