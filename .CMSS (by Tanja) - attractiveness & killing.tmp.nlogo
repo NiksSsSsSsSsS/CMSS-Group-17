@@ -1,7 +1,6 @@
+; Update: 25.06.2024
 ; NEW (3) ..... attractiveness logic (new Lines of code)
-; NEW (*) ..... polari
-
-
+; NEW (*) ..... polarizing view logic (new homicide logic)
 
 ;-----------------------------------------------------------------------------------------------
 ; This is the list of agent types:
@@ -135,6 +134,7 @@ to setup       ; this function (and the button with the same name) resets all th
     set isPregnant false
     set pregnantSinceDays 0
     set attractiveness random 1 + female_attractiveness_scale  ; <----------- NEW (3)
+
   ]
 
   ask turtles with [ ageYears < 0 ]

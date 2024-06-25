@@ -134,6 +134,7 @@ to setup       ; this function (and the button with the same name) resets all th
     set isPregnant false
     set pregnantSinceDays 0
     set attractiveness random 1 + female_attractiveness_scale  ; <----------- NEW (3)
+    set polarizing_view random-float 10  ; <----------- NEW (*)
   ]
 
   ask turtles with [ ageYears < 0 ]
