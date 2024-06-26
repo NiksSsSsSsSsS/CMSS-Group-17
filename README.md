@@ -77,28 +77,26 @@ Further report information:
 
     - Conclusions: reflect on your results and how they inform the question that motivated the project 
 
-------------------------------------------------------
 
-# New addition inspired by recent findings
+## Base Model simulates life on spaceship ​
 
-Source for values are in the word documents
+- Agents: male & female, movement, mating, pregnancy​
 
-Netlogo: marked LOC with 
+- Parameters: crew size, fertility, age, mating behaviour​
 
-    <----NEW(new data)  
-    (Or   <----NEW(old data & code))  
-    
-### Changed Values:   
-    -                         Old        New
-    - MaxAgeMen:               79*(73.4)  68.4
-    - MaxAgeMen:               85*(80.1)  73.8
-    - infertilityMen:          15         17.5
-    - infertilityWomen:        10         17.5
-    - Menopause:               45         50
-    - Menopause_SD:            3.9        5
-    - Chance of pregnancy:     75         20 -70
-    - Twinning Rate:           2          3
- Note: * in paper, () in code
+- Observation mechanics: population over time, accidents, crew demographics, births, deaths​
+
+- Assumptions: infinite ressources, no maintenance needed, simple society & behaviour​
+
+- Environment: safety zones on ship, accidents occur (1%)​
+
+- Mission Completion Check: ​
+
+    - Year 6,300 is reached​
+
+    - overcapacity​
+
+    - or extinction​
 
 
 ------------------------------------------------------
@@ -255,4 +253,18 @@ When two agents meet outside of the safety-zone:
 
 - [3] Procedure of the Simulation:  Sommer, Thorsten (2019). Simulation of a 6,300-year intergalactic journey. DOI: 10.17504/protocols.io.676hhre​
 
-- [4]  Experiment of Frédéric Marin and Camille Beluffi from 2018: https://arxiv.org/abs/1806.03856 
+- [4] Experiment of Frédéric Marin and Camille Beluffi from 2018: https://arxiv.org/abs/1806.03856 
+
+- [5] Simulating Irrational Human Behavior to Prevent Resource Depletion. Sircova A, Karimi F, Osin EN, Lee S, Holme P, et al. (2015) Simulating Irrational Human Behavior to Prevent Resource Depletion. PLOS ONE 10(3): e0117612. https://doi.org/10.1371/journal.pone.0117612
+
+- [6] Kalick, S. M., & Hamilton, T. E. (1986). The matching hypothesis reexamined. Journal of Personality and Social Psychology, 51(4), 673–682. https://doi.org/10.1037/0022-3514.51.4.673
+
+- [7] Szocik, K. (2019). Should and could humans go to Mars? Yes, but not now and not in the near future. Futures, 105, 54–66. https://doi.org/10.1016/j.futures.2018.08.004​
+
+- [8]  Salotti, J.-M. (2020). Minimum Number of Settlers for Survival on Another Planet. Scientific Reports, 10(1), 9700. https://doi.org/10.1038/s41598-020-66740-0​
+
+- [9] Haqq-Misra, J., Wolf, E. T., Welsh, W. F., Kopparapu, R. K., Kostov, V., & Kane, S. R. (2019). Constraining the Magnitude of Climate Extremes From Time-Varying Instellation on a Circumbinary Terrestrial Planet. Journal of Geophysical Research: Planets, 124(12), 3231–3243. https://doi.org/10.1029/2019JE006222​
+
+- [10] Marin, F., & Beluffi, C. (2018). Computing the minimal crew for a multi-generational space travel towards Proxima Centauri b (Version 1). arXiv. https://doi.org/10.48550/ARXIV.1806.03856​
+
+- [11]  Haqq-Misra, J. (2019). Can Deep Altruism Sustain Space Settlement? In K. Szocik (Ed.), The Human Factor in a Mission to Mars (pp. 145–155). Springer International Publishing. https://doi.org/10.1007/978-3-030-02059-0_8

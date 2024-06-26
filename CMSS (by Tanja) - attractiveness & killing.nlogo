@@ -566,7 +566,7 @@ to checkPolarizingView ; this is the killing logic <------ NEW (*)
     [
       let view-difference abs (polarizing_view - [polarizing_view] of other-turtle)
 
-      if view-difference > 8 ; if the difference is to high, one is killed by the other <---- TEST THIS VALUE TO FIND TRESHOLD
+      if view-difference > 6 ; if the difference is to high, one is killed by the other <---- TEST THIS VALUE TO FIND TRESHOLD
       [
         let to-die one-of (list self other-turtle) ; self or the other (only 1) randomly dies
         ask to-die [ die ]
