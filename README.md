@@ -63,6 +63,10 @@ Further Presentation information:
 
 ## Report
 
+### New:  
+Link to report file:  
+https://unigraz-my.sharepoint.com/:w:/g/personal/niklas_schramm_edu_uni-graz_at/Ea04oNzHfL5KiXV-4fgdaswBMpKMHlCZqoZZvqqCzHd4tQ?e=PSe3dp
+
 Link to the Text files with ideas:
 
 https://unigraz-my.sharepoint.com/:w:/g/personal/niklas_schramm_edu_uni-graz_at/EeBLnCoUompDg08Mth5LWpEBGOLcMMrNEzTTY4S28GEdJg?e=p9YLEc
